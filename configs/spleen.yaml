@@ -1,0 +1,16 @@
+task_name: spleen
+data_root: /kaggle/input/datasets/user123454321/hepaticvessel
+images_subdir: imagesTr
+labels_subdir: labelsTr
+
+in_channels: 1
+num_classes: 2
+
+label_names:
+  0: background
+  1: spleen
+
+patch_size: [64, 64, 64]
+target_spacing: [1.0, 1.0, 1.0]
+
+val_fraction: 0.2

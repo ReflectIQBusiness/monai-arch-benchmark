@@ -1,0 +1,24 @@
+# Core numerical + utilities
+numpy
+pandas
+scipy
+
+# Plotting
+matplotlib
+
+# PyTorch stack
+torch
+torchvision
+torchaudio
+
+# MONAI and friends (3D medical imaging)
+monai
+nibabel
+scikit-image
+einops
+# Model complexity (optional, but used in params_gflops)
+thop
+
+# Config and tests
+PyYAML
+pytest
