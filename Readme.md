@@ -5,10 +5,9 @@
 
 This repository contains the code for the study
 
-> **Architecture–Task Interaction Analysis in 3D Medical Image Segmentation  
-> using CNN and Transformer Architectures Across Multiple MSD Tasks**
+> **A MONAI-based software framework for architecture–task analysis in 3D medical image segmentation**
 
-submitted to **Neurocomputing** as an Open Source Project (OSP).
+submitted to **Neurocomputing** as a Software publication.
 
 The code provides a **unified MONAI-based pipeline** to train and evaluate a set of 3D architectures
 (CNNs and transformers) on multiple **Medical Segmentation Decathlon (MSD)** tasks under a
@@ -67,7 +66,7 @@ The manuscript uses the same pattern for the other four MSD tasks.
 2. Installation
 2.1. Clone the repository
 ```text
-git clone https://github.com/<your-username>/monai-arch-benchmark.git
+git clone https://github.com/ReflectIQBusiness/monai-arch-benchmark.git
 cd monai-arch-benchmark
 ```
 2.2. Create a virtual environment (recommended)
