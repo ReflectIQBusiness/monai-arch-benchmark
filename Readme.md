@@ -1,5 +1,8 @@
 # MONAI Architecture Benchmark for 3D MSD Segmentation Tasks
 
+
+⚠️ This repository is maintained under a personal GitHub account. It is purely academic work developed at the Laboratory of Computer Sciences, Faculty of Sciences, Ibn Tofail University, Kénitra, Morocco.
+
 This repository contains the code for the study
 
 > **Architecture–Task Interaction Analysis in 3D Medical Image Segmentation  
