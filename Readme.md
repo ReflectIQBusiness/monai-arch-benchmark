@@ -81,11 +81,20 @@ conda activate monai-arch-bench
 pip install -r requirements.txt
 ```
 2.4. Install the package in editable mode
+
 ```text
 pip install -e .
 ```
 
 This makes monai_arch_benchmark importable from anywhere in the environment.
+
+## Recent updates (v1.0.1)
+
+- Added `pyproject.toml` for standard Python package installation
+- Added `.github/workflows/tests.yml` for continuous integration  
+- Added `setuptools` and `tqdm` to `requirements.txt`
+- Updated installation instructions to reflect `pip install -e .` workflow
+- CI passes with 2 smoke tests on every push to `main`
 
 3. Data Preparation
 
