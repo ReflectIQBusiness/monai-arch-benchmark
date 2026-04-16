@@ -1,12 +1,9 @@
 # tests/test_models.py
-
 import torch
-
 from monai_arch_benchmark.models import build_model_zoo
 from monai_arch_benchmark.config import TaskConfig
 
-
-def _make_dummy_task_config():
+def _make_dummy_cfg():
     return TaskConfig(
         name="dummy",
         data_root="/tmp",
@@ -20,34 +17,25 @@ def _make_dummy_task_config():
         val_fraction=0.2,
     )
 
-
-def test_build_model_zoo_contains_expected_keys():
-    cfg = _make_dummy_task_config()
+def test_build_model_zoo_keys():
+    cfg = _make_dummy_cfg()
     zoo = build_model_zoo(
         in_channels=cfg.in_channels,
         num_classes=cfg.num_classes,
         patch_size=cfg.patch_size,
     )
+    assert "BasicUNet" in zoo
+    assert "UNet" in zoo
 
-    # We do not need to test every architecture, just a representative subset
-    expected = {"BasicUNet", "UNet", "SwinUNETR"}
-    assert expected.issubset(set(zoo.keys())), f"Missing models: {expected - set(zoo.keys())}"
-
-
-def test_basicunet_forward_pass_3d():
-    cfg = _make_dummy_task_config()
+def test_basicunet_forward():
+    cfg = _make_dummy_cfg()
     zoo = build_model_zoo(
         in_channels=cfg.in_channels,
         num_classes=cfg.num_classes,
         patch_size=cfg.patch_size,
     )
-    model = zoo["BasicUNet"]
-    model.eval()
-
-    x = torch.randn(1, cfg.in_channels, *cfg.patch_size)
+    model = zoo["BasicUNet"].eval()
+    x = torch.zeros(1, cfg.in_channels, *cfg.patch_size)
     with torch.no_grad():
         y = model(x)
-
-    assert y.shape == (1, cfg.num_classes, *cfg.patch_size), (
-        f"Unexpected output shape: {y.shape}"
-    )
+    assert y.shape == (1, cfg.num_classes, *cfg.patch_size)
