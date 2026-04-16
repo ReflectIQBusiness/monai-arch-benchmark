@@ -22,3 +22,6 @@ thop
 # Config and tests
 PyYAML
 pytest
+
+setuptools
+tqdm
