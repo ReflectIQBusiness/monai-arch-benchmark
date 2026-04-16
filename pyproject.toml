@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "monai-arch-benchmark"
+version = "0.1.0"
+description = "A MONAI-based software framework for architecture-task analysis in 3D medical image segmentation"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+  {name = "Hasnae Briouya", email = "hasnae.briouya@uit.ac.ma"}
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["monai_arch_benchmark*"]
